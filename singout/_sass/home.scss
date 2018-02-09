@@ -1,0 +1,65 @@
+#home {
+    .head {
+        font-size: 25px;
+        margin: 0;
+        text-align: center;
+        
+        a {
+            color: $bgColor;
+            border-bottom: 2px dotted $bgColor;
+            text-decoration: none;
+            font-weight: bold;
+
+            &:hover {
+                color: $highlight;
+                border-bottom: 3px dotted $highlight;
+            }
+        }
+    }
+
+    #posts {
+        padding-top: 50px;
+        max-width: 660px;
+        margin: 0 auto;
+    }
+}
+
+
+ul.post-list {
+    padding: 0;
+
+    li {
+        margin-top: 15px;
+        display: block;
+        padding: 0;
+
+        &:first-child {
+            margin-top: 0
+        }
+
+        p {
+            margin: 0;
+
+            &.blog-title {
+                font-size: 19px;
+                float: left;
+                font-weight: 600;
+            }
+
+            &.blog-date {
+                font-weight: 100;
+                font-size: 13px;
+                clear: both;
+                text-transform: uppercase;
+            }
+
+            &.blog-tags {
+                float: right;
+                display: inline-block;
+                font-size: 12px;
+                font-style: italic;
+            }
+        }
+    }
+}
+

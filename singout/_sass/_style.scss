@@ -1,0 +1,130 @@
+$bgColor: #323232;
+$primary: #b8b7ad;
+$highlight: #FFD640;
+$titleFont: "proxima-nova-condensed";
+$bodyFont: "jaf-bernina-sans", sans-serif;
+
+@import 'sanitize';
+@import 'animate';
+
+::-moz-selection { background: highlight; }
+::selection { background: highlight; }
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: $bgColor;
+    text-decoration: none;
+
+    &:hover {
+        color: $highlight;
+    }
+}
+
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: $bodyFont;
+    color: $bgColor;
+    font-size: 16px;
+    background: transparent url('/img/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+
+    @media screen and (max-width: 600px) {
+        font-size: 14px;
+    }
+}
+    
+
+h1, h2, h3, h4 {
+    font-family: $titleFont
+}
+
+#wrapper {
+    padding: 40px;
+    height: 100%;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+.aside {
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        background:#F0F5F9;
+    }
+}
+
+
+#main-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 70px;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto 30px auto;
+}
+
+#main-nav {
+    display: block;
+    padding-bottom: 20px;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+        li {
+            padding: 10px;
+            display: inline-block;
+            text-align: center;
+
+            a {
+                font-weight: bold;
+                font-size: 0.85em;
+                text-decoration: none;
+
+                &.current {
+                    border-bottom: 3px dotted #ffd640;
+                }
+            }
+        }
+    }
+}
+    
+
+body.is-project {
+    #main-nav li {
+        background: $bgColor;
+
+        a {
+            color: white;
+
+            &:hover {
+                color: $highlight
+            }
+        }
+    }
+}
+        
+
+body.is-page
+    &.is-me,
+    &.is-blog {
+        #container {
+            max-width: 580px
+        }
+    }
+
+@import 'home';
+@import 'project';
